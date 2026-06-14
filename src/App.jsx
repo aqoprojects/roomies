@@ -9,6 +9,7 @@ import RguestPage from './pages/RguestPage';
 import MsuccessPage from './pages/MsuccessPage';
 import ChatMessagePage from './pages/ChatMessagePage';
 import ChatListPage from './pages/ChatListPage';
+import UserProfilePage from './pages/UserProfilePage';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path='/sent' element={<MsuccessPage/>} />
         <Route path='/fpassword' element={<ForgetpasswordPage/>} />
         <Route path='/rpassword' element={<ResetpasswordPage/>} />
+
+        <Route path='/:username' element={<UserProfilePage/>} />
 
         <Route path='/chats' element={<ChatListPage/>} />
         <Route path='/chats/:id/' element={<ChatMessagePage/>} />
