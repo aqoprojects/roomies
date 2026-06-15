@@ -820,7 +820,7 @@ export function TextareaField1({
     const hint        = showDefault ? (texts.text2        ?? 'This is a hint text to help user.') : texts.text2;
 
     return (
-        <div style={divStyle} {...rootProps}>
+        <div className={`${extra}`} style={divStyle} {...rootProps}>
             {children || (
                 <>
                     {label && <label className={styles.text1 ?? ''}>{label}</label>}

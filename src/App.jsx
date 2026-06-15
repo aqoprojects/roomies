@@ -10,6 +10,9 @@ import MsuccessPage from './pages/MsuccessPage';
 import ChatMessagePage from './pages/ChatMessagePage';
 import ChatListPage from './pages/ChatListPage';
 import UserProfilePage from './pages/UserProfilePage';
+import UserSettingPage from './pages/UserSettingPage';
+import FeedPage from './pages/FeedPage';
+import NotificationPage from './pages/NotificationPage';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
         <Route path='/rpassword' element={<ResetpasswordPage/>} />
 
         <Route path='/:username' element={<UserProfilePage/>} />
+        <Route path='/settings' element={<UserSettingPage/>} />
+        <Route  index element={<FeedPage/>} />
+        <Route path="/notification" element={<NotificationPage/>}/>
 
         <Route path='/chats' element={<ChatListPage/>} />
         <Route path='/chats/:id/' element={<ChatMessagePage/>} />

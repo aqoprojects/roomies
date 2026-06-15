@@ -190,7 +190,7 @@ export function Button5({
 
     return (
         <button
-            className={`${extra ?? ''} bg-[#7F56D9] flex items-center-safe justify-between gap-2 px-2.5 py-2.5 text-white font-boldy rounded-md w-fit`}
+            className={`${extra ?? ''} bg-[#7F56D9] flex items-center-safe justify-between gap-2 px-2.5 py-2.5 font-boldy rounded-md w-fit`}
             style={divStyle}
             {...rootProps}
         >
