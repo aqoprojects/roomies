@@ -35,14 +35,7 @@ function App() {
         <Route path='/chats/:id/' element={<ChatMessagePage/>} />
 
 
-
-
-
-
-
-
-        
-        <Route path='/design' element={<Homepage/>} />
+        {/* <Route path='/design' element={<Homepage/>} /> */}
       </Routes>
     </BrowserRouter>
   )
