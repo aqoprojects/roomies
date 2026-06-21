@@ -25,7 +25,7 @@ const ChatMessagePage = () => {
 
             <main className='flex gap-5 md:p-8 flex-1 overflow-hidden'>
 
-                <ProfileCardComponent />
+                {/* <ProfileCardComponent /> */}
 
                 <article className='flex-1 flex flex-col  border-1 border-black/10 rounded-lg overflow-hidden'>
                     <section className='flex justify-between border-b-1 border-black/10 p-6'>
@@ -40,7 +40,7 @@ const ChatMessagePage = () => {
 
                     <section className='flex flex-1 overflow-hidden'>
 
-                        <div className='hidden md:flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-auto grow-0'>
+                        <div className='hidden flex-1 md:flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-auto shrink grow-0 min-w-80'>
                             <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
                                 <DropdownListHeader1
                                     showDefault={false}
@@ -53,7 +53,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none bg-black/5 w-full'}
+                                    extra={'!gap-6 !shadow-none bg-black/5 !w-auto'}
                                 />
 
                                 <DropdownListHeader1
@@ -67,7 +67,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none w-full'}
+                                    extra={'!gap-6 !shadow-none !w-auto'}
                                 />
 
                                 <DropdownListHeader1
@@ -81,7 +81,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none w-full'}
+                                    extra={'!gap-6 !shadow-none !w-auto'}
                                 />
 
                                 <DropdownListHeader1 showDefault={false}
@@ -94,7 +94,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none w-full'}
+                                    extra={'!gap-6 !shadow-none !w-auto'}
                                 />
 
 
@@ -115,8 +115,8 @@ const ChatMessagePage = () => {
                             </div>
                         </div>
 
-                        <div className='flex-1 p-5 flex flex-col overflow-auto shrink-0 '>
-                            <div className='flex-1  flex flex-col gap-8 overflow-scroll'>
+                        <div className='p-5 flex-1 flex flex-col overflow-auto shrink-0 grow'>
+                            <div className='flex-1 flex flex-col gap-8 overflow-scroll shrink-0 grow'>
 
                                 <div className='flex gap-3 justify-start'>
                                     <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
@@ -251,9 +251,9 @@ const ChatMessagePage = () => {
                                 </div>
                             </div>
 
-                            <div className='flex justify-center-safe items-center-safe p-2 gap-3'>
-                                <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} />
-                                <div className='flex-1'>
+                            <div className='flex justify-center-safe items-center-safe p-2 gap-3 bg-red-500'>
+                                <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} extra={'min-w-11'}/>
+                                <div className='flex-1 bg-amber-300'>
                                     <InputField1
                                         showDefault={false}
                                         texts={{ placeholder1: 'Message...' }}
@@ -261,11 +261,11 @@ const ChatMessagePage = () => {
                                             icon2: {
                                                 icon: SlPaperPlane,
                                                 iconStyle: '!w-6 !h-6  !text-[#5D6778]',
-                                                extra: '!w-13 flex justify-end items-center pr-4',
+                                                extra: '!w-auto md:!w-13 flex justify-end items-center !p-0 md:pr-4',
                                             }
                                         }}
-                                        styles={{ input1: '!text-base text-[#707988] flex-1 px-3' }}
-                                        extra={'!ring-[#E2E8F0] w-full py-3'}
+                                        styles={{ input1: '!text-base text-[#707988] flex-1 px-3 ' }}
+                                        extra={'!ring-[#E2E8F0] !w-full py-3'}
                                     />
                                 </div>
                             </div>
