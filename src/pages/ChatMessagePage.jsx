@@ -251,9 +251,9 @@ const ChatMessagePage = () => {
                                 </div>
                             </div>
 
-                            <div className='flex justify-center-safe items-center-safe p-2 gap-3 bg-red-500'>
+                            <div className='flex justify-center-safe items-center-safe p-2 gap-3 '>
                                 <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} extra={'min-w-11'}/>
-                                <div className='flex-1 bg-amber-300'>
+                                <div className='flex-1'>
                                     <InputField1
                                         showDefault={false}
                                         texts={{ placeholder1: 'Message...' }}
