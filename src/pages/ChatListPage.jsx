@@ -25,12 +25,12 @@ const ChatListPage = () => {
     <div className="flex flex-col h-screen">
       <HeaderComponent/>
 
-      <main className='flex gap-5 p-8 flex-1 overflow-hidden'>
+      <main className='flex gap-5 mt-15 md:mt-0 md:p-8 flex-1 overflow-hidden'>
 
         <ProfileCardComponent/>
 
-        <article className='flex-1 flex flex-col  border-1 border-black/10 rounded-lg overflow-hidden'>
-          <section className='flex justify-between border-b-1 border-black/10 p-6'>
+        <article className='flex-1 flex flex-col  md:border-1 border-black/10 md:rounded-lg overflow-hidden'>
+          <section className='hidden md:flex justify-between border-b-1 border-black/10 p-6'>
             <div>
               <p className='font-semibold text-xl'>Messages</p>
             </div>
@@ -41,8 +41,8 @@ const ChatListPage = () => {
 
 
           <section className='flex flex-1 overflow-hidden'>
-            <div className='flex flex-col h-full border-r-1 border-black/10 h-120'>
-              <div className='flex-1 mt-10 border-b-1 border-black/10 overflow-auto my-2'>
+            <div className='flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-full md:w-auto'>
+              <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
                 <DropdownListHeader1
                   showDefault={false}
                   texts={{
@@ -54,7 +54,7 @@ const ChatListPage = () => {
                     text1: '!font-medium',
                     text2: '!text-lg'
                   }}
-                  extra={'!gap-6 !shadow-none bg-black/5'}
+                  extra={'!gap-6 !shadow-none bg-black/5 w-full'}
                 />
 
                 <DropdownListHeader1
@@ -68,7 +68,7 @@ const ChatListPage = () => {
                     text1: '!font-medium',
                     text2: '!text-lg'
                   }}
-                  extra={'!gap-6 !shadow-none'}
+                  extra={'!gap-6 !shadow-none w-full'}
                 />
 
                 <DropdownListHeader1
@@ -82,7 +82,7 @@ const ChatListPage = () => {
                     text1: '!font-medium',
                     text2: '!text-lg'
                   }}
-                  extra={'!gap-6 !shadow-none'}
+                  extra={'!gap-6 !shadow-none w-full'}
                 />
 
                 <DropdownListHeader1 showDefault={false}
@@ -95,13 +95,13 @@ const ChatListPage = () => {
                     text1: '!font-medium',
                     text2: '!text-lg'
                   }}
-                  extra={'!gap-6 !shadow-none'}
+                  extra={'!gap-6 !shadow-none w-full'}
                 />
 
 
               </div>
 
-              <div>
+              <div className='border-y-1 md:border-0 border-black/10'>
                 <Button1
                   showDefault={false}
                   texts={{ text1: 'New Message' }}
@@ -109,14 +109,14 @@ const ChatListPage = () => {
                   styles={{
                     text: 'font-medium !text-lg text-black/70'
                   }}
-                  extra={'bg-transparent !text-black  justify-center-safe mx-5'}
+                  extra={'bg-transparent !text-black !py-4 md:p-3 justify-center-safe mx-5'}
 
                   onClick={() => newMessageCreateBtn()}
                 />
               </div>
             </div>
 
-            <div className='flex-1 p-5 flex flex-col justify-center-safe items-center-safe'>
+            <div className='hidden flex-1 p-5 md:flex flex-col justify-center-safe items-center-safe'>
               <Avatar3
                 icons={{ icon1: HiOutlineInbox }}
                 extra={'bg-transparent w-20 h-20'}

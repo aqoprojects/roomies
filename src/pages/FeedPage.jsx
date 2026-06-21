@@ -20,11 +20,11 @@ const FeedPage = () => {
         <div className="flex flex-col h-screen">
             <HeaderComponent />
 
-            <main className='flex gap-10 py-8 px-20 flex-1'>
-                {/* <ProfileCardComponent /> */}
+            <main className='flex gap-10 py-4 md:py-8 md:px-20 flex-1 mt-13 md:mt-0'>
+                <ProfileCardComponent />
 
-                <article className='flex-1 flex flex-col gap-10'>
-                    <section className='bg-white p-5 border-1 border-black/10 rounded-lg'>
+                <article className='flex-1 flex flex-col gap-5 md:gap-10'>
+                    <section className='bg-white p-5 border-y-1 md:border-1 border-black/10 md:rounded-lg'>
                         <div className='flex gap-3 items-start'>
                             <Avatar1
                                 showDefault={false}
@@ -61,7 +61,7 @@ const FeedPage = () => {
 
                     <section className='flex gap-12'>
                         <article className='flex flex-col gap-7'>
-                            <section className='bg-white border-1 border-black/10'>
+                            <section className='bg-white md:border-1 border-black/10'>
                                 <div className='flex justify-between items-center-safe p-5'>
                                     <div className='flex gap-5'>
                                         <Avatar1
@@ -123,7 +123,7 @@ const FeedPage = () => {
 
                             </section>
 
-                            <section className='bg-white border-1 border-black/10'>
+                            <section className='bg-white md:border-1 border-black/10'>
                                 <div className='flex justify-between items-center-safe p-5'>
                                     <div className='flex gap-5'>
                                         <Avatar1
@@ -171,7 +171,7 @@ const FeedPage = () => {
                                 </div>
                             </section>
 
-                            <section className='bg-white border-1 border-black/10'>
+                            <section className='bg-white md:border-1 border-black/10'>
                                 <div className='flex justify-between items-center-safe p-5'>
                                     <div className='flex gap-5'>
                                         <Avatar1
@@ -227,7 +227,7 @@ const FeedPage = () => {
 
                 </article>
 
-                <aside>
+                <aside className='hidden md:block'>
                     <section>
 
                         <div className='bg-white  rounded-xl min-w-90 border-1 border-black/10 rounded-md'>

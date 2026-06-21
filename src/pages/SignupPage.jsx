@@ -37,7 +37,7 @@ const SignupPage = () => {
         { success: null, user: null, error: null }
     )
     return (
-        <div className='flex flex-col gap-10 h-screen bg-[#FAFBFF]'>
+        <div className='flex flex-col gap-10 h-screen bg-white md:bg-[#FAFBFF]'>
             <header className='flex justify-center-safe items-center-safe py-3'>
                 <div className='w-25'>
                     <img src='/Logo.svg' className='w-full ' />
@@ -45,7 +45,7 @@ const SignupPage = () => {
             </header>
 
             <main className='flex-1 flex justify-center-safe items-center-safe'>
-                <section className='w-105 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
+                <section className='w-105 md:shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
 
                     <div className='flex flex-col gap-4'>
                         <GmailButton1 
@@ -152,7 +152,7 @@ const SignupPage = () => {
                             showDefault={false}
                             texts={{text1: 'I agree to the termms and privacy policy.'}}
                             checkboxProps={{required: true}}
-                            styles={{ text1: '!font-normal !text-base' }}
+                            styles={{ text1: '!font-normal !text-[clamp(14px,3vw,1vw)]' }}
                             extra={'w-full !p-0'}
                         />
 

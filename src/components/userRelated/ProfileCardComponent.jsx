@@ -7,7 +7,7 @@ import { LuBell } from "react-icons/lu";
 
 const ProfileCardComponent = () => {
     return (
-        <aside className='rounded-t-sm'>
+        <aside className='hidden md:block rounded-t-sm'>
             <Dropdown1 extra={'!w-80  px-0 py-0 pb-5 bg-white !shadow-none border-1 border-black/10'}>
                 <div>
                     <div>

@@ -13,102 +13,19 @@ import { FiEdit } from "react-icons/fi";
 import { Avatar1 } from './../Designs/base/Avatars';
 import { Tooltip1, Tooltip2, Tooltip3 } from './../Designs/base/Tooltips';
 import NewMessage from '../components/NewMessage';
+import HeaderComponent from '../components/header/HeaderComponent';
+import ProfileCardComponent from '../components/userRelated/ProfileCardComponent';
 
 
 const ChatMessagePage = () => {
     const [addNewMessage, setAddNewManage] = useState(false)
     return (
         <div className="flex flex-col h-screen">
-            <header className='py-2 md:px-10 bg-white'>
+            {/* <HeaderComponent/> */}
 
-                <nav className='flex justify-between items-center-safe gap-3 py-1'>
-                    <div className='min-w-25 w-25 md:mx-5'>
-                        <img src='/Logo.svg' className='w-full ' />
-                    </div>
+            <main className='flex gap-5 md:p-8 flex-1 overflow-hidden'>
 
-                    <div className='min-w-50 w-70 md:w-full max-w-150 shrink'>
-                        <InputField1
-                            showDefault={false}
-                            icons={{
-                                icon1: {
-                                    icon: FiSearch,
-                                    iconStyle: '!w-6 !h-6  !text-[#5D6778]',
-                                    extra: '!w-13 flex justify-end items-center pr-2'
-                                }
-                            }}
-                            texts={{ placeholder1: 'Search' }}
-                            styles={{ input1: '!text-base text-[#707988] flex-1' }}
-                            extra={'!ring-[#E2E8F0] w-full'}
-                        />
-                    </div>
-
-
-                    <Button1
-                        showDefault={true}
-                        texts={{ text1: 'Login' }}
-                        icons={{ icon2: IoPersonOutline }}
-                        styles={{
-                            icon1: 'hidden',
-                            icon2: '!fill-black',
-                            text1: 'font-normal !text-base'
-                        }}
-                        extra={'bg-transparent !text-black  justify-center-safe mx-5'}
-                    />
-                </nav>
-            </header>
-
-            <main className='flex gap-5 p-8 flex-1 overflow-hidden'>
-
-                <aside className=''>
-                    <Dropdown1 extra={'!w-80  px-0 py-0 pb-5 bg-white'}>
-                        <div>
-                            <div className=''>
-                                <div className='w-full h-19 bg-[url("/src/assets/images/bg/bgcover1.png")] bg-cover bg-center'></div>
-                                <div className='relative px-10'>
-                                    <img src="/src/assets/images/profiles/male1.png" alt="bgcover" className='w-15 absolute -bottom-7  rounded-full ring-1 ring-white ' />
-                                </div>
-                            </div>
-
-                            <div className='px-10 mt-15'>
-                                <p className='font-semibold'>Robert Fox</p>
-                                <p className='text-black/50'>Software Engineer</p>
-                            </div>
-                        </div>
-                        <div className='w-full px-10  mt-12'>
-                            <SelectMenuItem3
-                                showDefault={false}
-                                extra={'w-full !bg-white !p-0 !py-3'}
-                                texts={{ text1: 'Home' }}
-                                icons={{ icon1: FiHome }}
-                                styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
-                            />
-                            <DropdownLine1 extra={'bg-black/10 w-full'} />
-                            <SelectMenuItem3
-                                showDefault={false}
-                                extra={'w-full !bg-white !p-0 !py-3'}
-                                icons={{ icon1: IoPersonOutline }}
-                                texts={{ text1: 'Profile' }}
-                                styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
-                            />
-                            <DropdownLine1 extra={'bg-black/10 w-full'} />
-                            <SelectMenuItem3
-                                showDefault={false}
-                                extra={'w-full !bg-white !p-0 !py-3'}
-                                icons={{ icon1: SlPaperPlane }}
-                                texts={{ text1: 'Messages' }}
-                                styles={{ text1: '!text-base text-black', icon1: '!w-5 !h-5 ' }}
-                            />
-                            <DropdownLine1 extra={'bg-black/10 w-full'} />
-                            <SelectMenuItem3
-                                showDefault={false}
-                                extra={'w-full !bg-white !p-0 !py-3'}
-                                icons={{ icon1: LuBell }}
-                                texts={{ text1: 'notifications' }}
-                                styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
-                            />
-                        </div>
-                    </Dropdown1>
-                </aside>
+                <ProfileCardComponent />
 
                 <article className='flex-1 flex flex-col  border-1 border-black/10 rounded-lg overflow-hidden'>
                     <section className='flex justify-between border-b-1 border-black/10 p-6'>
@@ -122,8 +39,9 @@ const ChatMessagePage = () => {
 
 
                     <section className='flex flex-1 overflow-hidden'>
-                        <div className='flex flex-col h-full border-r-1 border-black/10 h-120'>
-                            <div className='flex-1 mt-10 border-b-1 border-black/10 overflow-auto my-2'>
+
+                        <div className='hidden md:flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-auto grow-0'>
+                            <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
                                 <DropdownListHeader1
                                     showDefault={false}
                                     texts={{
@@ -135,7 +53,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none bg-black/5'}
+                                    extra={'!gap-6 !shadow-none bg-black/5 w-full'}
                                 />
 
                                 <DropdownListHeader1
@@ -149,7 +67,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none'}
+                                    extra={'!gap-6 !shadow-none w-full'}
                                 />
 
                                 <DropdownListHeader1
@@ -163,7 +81,7 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none'}
+                                    extra={'!gap-6 !shadow-none w-full'}
                                 />
 
                                 <DropdownListHeader1 showDefault={false}
@@ -176,13 +94,13 @@ const ChatMessagePage = () => {
                                         text1: '!font-medium',
                                         text2: '!text-lg'
                                     }}
-                                    extra={'!gap-6 !shadow-none'}
+                                    extra={'!gap-6 !shadow-none w-full'}
                                 />
 
 
                             </div>
 
-                            <div>
+                            <div className='border-y-1 md:border-0 border-black/10'>
                                 <Button1
                                     showDefault={false}
                                     texts={{ text1: 'New Message' }}
@@ -190,161 +108,161 @@ const ChatMessagePage = () => {
                                     styles={{
                                         text: 'font-medium !text-lg text-black/70'
                                     }}
-                                    extra={'bg-transparent !text-black  justify-center-safe mx-5'}
+                                    extra={'bg-transparent !text-black !py-4 md:p-3 justify-center-safe mx-5'}
 
                                     onClick={() => newMessageCreateBtn()}
                                 />
                             </div>
                         </div>
 
-                        <div className='flex-1 p-5 flex flex-col overflow-auto'>
+                        <div className='flex-1 p-5 flex flex-col overflow-auto shrink-0 '>
                             <div className='flex-1  flex flex-col gap-8 overflow-scroll'>
 
                                 <div className='flex gap-3 justify-start'>
-                                    <Avatar1 images={{image1: '/src/assets/images/profiles/female1.png' }} />
+                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
-                                        <SelectMenuItem1 
-                                            extra={'bg-transparent !w-full !p-0 !items-center'} 
+                                        <SelectMenuItem1
+                                            extra={'bg-transparent !w-full !p-0 !items-center'}
                                             texts={{
-                                                text1: 'Bessie', 
+                                                text1: 'Bessie',
                                                 text2: 'Marketing Manager'
-                                            }} 
-                                            styles={{ 
-                                                text1: 'font-medium', 
-                                                text2: '!text-base' 
-                                            }} 
-                                        />
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
-                                    </div>
-                                </div>
-
-                                <div className='flex gap-3 justify-end '>
-                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
-                                    </div>
-                                </div>
-
-
-                                <div className='flex gap-3 justify-start'>
-                                    <Avatar1 images={{image1: '/src/assets/images/profiles/female1.png' }} />
-                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
-                                        <SelectMenuItem1  
-                                            texts={{
-                                                text1: 'Bessie', 
-                                                text2: 'Marketing Manager'
-                                            }} 
-                                            styles={{ 
-                                                text1: 'font-medium', 
-                                                text2: '!text-base' 
-                                            }}  
-                                            extra={'bg-transparent !w-full !p-0 !items-center'} 
-                                        />
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
-                                    </div>
-                                </div>
-
-                                <div className='flex gap-3 justify-end '>
-                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
-                                    </div>
-                                </div>
-
-
-                                <div className='flex gap-3 justify-start'>
-                                    <Avatar1 images={{image1: '/src/assets/images/profiles/female1.png' }} />
-                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
-                                        <SelectMenuItem1 
-                                            texts={{
-                                                text1: 'Bessie', 
-                                                text2: 'Marketing Manager'
-                                            }} 
-                                            styles={{ 
-                                                text1: 'font-medium', 
-                                                text2: '!text-base' 
                                             }}
-                                            extra={'bg-transparent !w-full !p-0 !items-center'}   
+                                            styles={{
+                                                text1: 'font-medium text-[clamp(16px,3vw,1.3vw)]',
+                                                text2: ' text-[clamp(14px,3vw,1vw)] hidden md:block'
+                                            }}
                                         />
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3 justify-end '>
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
+                                    </div>
+                                </div>
+
+
+                                <div className='flex gap-3 justify-start'>
+                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
+                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
+                                        <SelectMenuItem1
+                                            extra={'bg-transparent !w-full !p-0 !items-center'}
+                                            texts={{
+                                                text1: 'Bessie',
+                                                text2: 'Marketing Manager'
+                                            }}
+                                            styles={{
+                                                text1: 'font-medium text-[clamp(16px,3vw,1.3vw)]',
+                                                text2: ' text-[clamp(14px,3vw,1vw)] hidden md:block'
+                                            }}
+                                        />
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
+                                    </div>
+                                </div>
+
+                                <div className='flex gap-3 justify-end '>
+                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
+                                    </div>
+                                </div>
+
+
+                                <div className='flex gap-3 justify-start'>
+                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
+                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
+                                        <SelectMenuItem1
+                                            extra={'bg-transparent !w-full !p-0 !items-center'}
+                                            texts={{
+                                                text1: 'Bessie',
+                                                text2: 'Marketing Manager'
+                                            }}
+                                            styles={{
+                                                text1: 'font-medium text-[clamp(16px,3vw,1.3vw)]',
+                                                text2: ' text-[clamp(14px,3vw,1vw)] hidden md:block'
+                                            }}
+                                        />
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
+                                    </div>
+                                </div>
+
+                                <div className='flex gap-3 justify-end '>
+                                    <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3 justify-start'>
-                                    <Avatar1 images={{image1: '/src/assets/images/profiles/female1.png' }} />
+                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
-                                        <SelectMenuItem1 
+                                        <SelectMenuItem1
+                                            extra={'bg-transparent !w-full !p-0 !items-center'}
                                             texts={{
-                                                text1: 'Bessie', 
+                                                text1: 'Bessie',
                                                 text2: 'Marketing Manager'
-                                            }} 
-                                            styles={{ 
-                                                text1: 'font-medium', 
-                                                text2: '!text-base' 
                                             }}
-                                            extra={'bg-transparent !w-full !p-0 !items-center'}   
+                                            styles={{
+                                                text1: 'font-medium text-[clamp(16px,3vw,1.3vw)]',
+                                                text2: ' text-[clamp(14px,3vw,1vw)] hidden md:block'
+                                            }}
                                         />
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3 justify-end '>
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3 justify-start'>
-                                    <Avatar1 images={{image1: '/src/assets/images/profiles/female1.png' }} />
+                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
-                                        <SelectMenuItem1 
+                                        <SelectMenuItem1
+                                            extra={'bg-transparent !w-full !p-0 !items-center'}
                                             texts={{
-                                                text1: 'Bessie', 
+                                                text1: 'Bessie',
                                                 text2: 'Marketing Manager'
-                                            }} 
-                                            styles={{ 
-                                                text1: 'font-medium', 
-                                                text2: '!text-base' 
                                             }}
-                                            extra={'bg-transparent !w-full !p-0 !items-center'}   
+                                            styles={{
+                                                text1: 'font-medium text-[clamp(16px,3vw,1.3vw)]',
+                                                text2: ' text-[clamp(14px,3vw,1vw)] hidden md:block'
+                                            }}
                                         />
-                                        <p>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some challenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-3 justify-end '>
                                     <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3 bg-indigo-300'>
-                                        <p>Hi, Robert. I'm facing some cha2llenges in optimizing my code for performance. Can you help?</p>
-                                        <p className='text-right'>12:04</p>
+                                        <p className='text-[clamp(14px,3vw,1vw)]'>Hi, Robert. I'm facing some cha2llenges in optimizing my code for performance. Can you help?</p>
+                                        <p className='text-right text-[clamp(14px,3vw,1vw)]'>12:04</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div className='flex justify-center-safe items-center-safe p-2 gap-3'>
-                                <Avatar1 images={{image1: '/src/assets/images/profiles/male1.png'}} />
+                                <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} />
                                 <div className='flex-1'>
                                     <InputField1
                                         showDefault={false}
-                                        texts={{placeholder1: 'Message...'}}
-                                        icons={{ 
+                                        texts={{ placeholder1: 'Message...' }}
+                                        icons={{
                                             icon2: {
-                                                icon: SlPaperPlane, 
+                                                icon: SlPaperPlane,
                                                 iconStyle: '!w-6 !h-6  !text-[#5D6778]',
-                                                extra: '!w-13 flex justify-end items-center pr-4', 
-                                            } 
+                                                extra: '!w-13 flex justify-end items-center pr-4',
+                                            }
                                         }}
                                         styles={{ input1: '!text-base text-[#707988] flex-1 px-3' }}
                                         extra={'!ring-[#E2E8F0] w-full py-3'}

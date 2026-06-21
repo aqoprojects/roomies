@@ -7,7 +7,7 @@ import { InputField1 } from '../Designs/base/Inputs';
 
 const LoginPage = () => {
   return (
-    <div className='flex flex-col h-screen bg-[#FAFBFF]'>
+    <div className='flex flex-col h-screen bg-white md:bg-[#FAFBFF]'>
         <header className='flex justify-center-safe items-center-safe py-3'>
             <div className='w-25'>
                 <img src='/Logo.svg' className='w-full '/>
@@ -15,7 +15,7 @@ const LoginPage = () => {
         </header>
 
         <main className='flex-1 flex justify-center-safe items-center-safe'>
-            <section className='w-100 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
+            <section className='w-100 md:shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
 
                     <div className='flex flex-col gap-4'>
                         <GmailButton1 
@@ -61,7 +61,7 @@ const LoginPage = () => {
 
                     <Button1
                         showDefault={false}
-                        texts={{text1: 'Login in'}}
+                        texts={{text1: 'Login'}}
                         extra={'w-full bg-black !font-normal text-sm justify-center-safe py-3 my-9'}
                     />
 
