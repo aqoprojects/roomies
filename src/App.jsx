@@ -26,8 +26,8 @@ function App() {
         <Route path='/fpassword' element={<ForgetpasswordPage/>} />
         <Route path='/rpassword' element={<ResetpasswordPage/>} />
 
-        <Route path='/:username' element={<UserProfilePage/>} />
-        <Route path='/settings' element={<UserSettingPage/>} />
+        <Route path='/:username/*' element={<UserProfilePage/>} />
+        {/* <Route path='/settings' element={<UserSettingPage/>} /> */}
         <Route  index element={<FeedPage/>} />
         <Route path="/notification" element={<NotificationPage/>}/>
 

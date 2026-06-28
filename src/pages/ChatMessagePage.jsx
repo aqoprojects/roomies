@@ -16,6 +16,7 @@ import NewMessage from '../components/NewMessage';
 import HeaderComponent from '../components/header/HeaderComponent';
 import ProfileCardComponent from '../components/userRelated/ProfileCardComponent';
 import { MyMessageBar, PeopleMessageBar } from '../components/chat/message/MessageBar';
+import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
 
 
 const ChatMessagePage = () => {
@@ -24,14 +25,24 @@ const ChatMessagePage = () => {
         <div className="flex flex-col h-screen">
             {/* <HeaderComponent/> */}
 
-            <main className='flex gap-5 md:p-8 flex-1 overflow-hidden'>
+            <main className='flex gap-5 lg:p-8 flex-1 overflow-hidden'>
 
-                {/* <ProfileCardComponent /> */}
+                <ProfileCardComponent />
 
                 <article className='flex-1 flex flex-col  border-1 border-black/10 rounded-lg overflow-hidden'>
                     <section className='flex justify-between border-b-1 border-black/10 p-6'>
                         <div>
-                            <p className='font-semibold text-xl'>Messages</p>
+                            <p className='font-semibold text-xl hidden lg:block'>Messages</p>
+                            <Button4
+                                showDefault={true}
+                                texts={{ text1: 'Back' }}
+                                icons={{ icon1: MdOutlineKeyboardArrowLeft }}
+                                styles={{
+                                    text1: "!text-black/60 font-normal !text-base",
+                                    icon1: "!fill-black/60"
+                                }}
+                                extra={'bg-transparent lg:hidden'}
+                            />
                         </div>
                         <div>
                             <LabelBadge1 showDefault={false} texts={{ text1: 'online' }} extra={'bg-white !ring-black/10 font-medium text-lg !px-3'} />
@@ -41,7 +52,7 @@ const ChatMessagePage = () => {
 
                     <section className='flex flex-1 overflow-hidden'>
 
-                        <div className='hidden flex-1 lg:flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-auto shrink grow-0 min-w-80'>
+                        <div className='hidden flex-1 lg:flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-auto shrink grow-0 '>
                             <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
                                 <DropdownListHeader1
                                     showDefault={false}
@@ -119,9 +130,9 @@ const ChatMessagePage = () => {
                         <div className='p-5 flex-1 flex flex-col overflow-auto shrink-0 grow'>
                             <div className='flex-1 flex flex-col gap-8 overflow-scroll shrink-0 grow'>
 
-                                <PeopleMessageBar/>
+                                <PeopleMessageBar />
 
-                                <MyMessageBar/>
+                                <MyMessageBar />
 
 
                                 <div className='flex gap-3 justify-start'>
@@ -231,7 +242,7 @@ const ChatMessagePage = () => {
                             </div>
 
                             <div className='flex justify-center-safe items-center-safe p-2 gap-3 '>
-                                <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} extra={'min-w-11'}/>
+                                <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} extra={'min-w-11'} />
                                 <div className='flex-1'>
                                     <InputField1
                                         showDefault={false}

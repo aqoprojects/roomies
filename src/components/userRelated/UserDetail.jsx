@@ -7,7 +7,7 @@ const UserDetail = () => {
     const navigate = useNavigate()
     
     return (
-        <div className='flex justify-center-safe items-center-safe gap-4'>
+        <div className='flex  flex-col md:flex-row justify-center-safe md:items-center-safe gap-4'>
             <Avatar1
                 showDefault={false}
                 images={{ image1: "/src/assets/images/profiles/male1.png" }}
@@ -20,7 +20,11 @@ const UserDetail = () => {
                 }}
             />
             <div className='font-semibold'>
-                <p className=' text-xl'>Robert Fox <span className='text-base text-black/40'>/ @robert</span></p>
+                <div className='flex gap-2 md:gap-1 text-nowrap items-center-safe mb-1'>
+                    <p className=' text-lg md:text-xl'>Robert Fox </p>
+                    <p className='text-base text-black/40 hidden md:block'>/ </p>
+                    <p className='text-sm text-black/40'>@robert</p>
+                </div>
                 <p className='text-black/40'>Software Engineer</p>
             </div>
 

@@ -18,7 +18,7 @@ const HeaderComponent = () => {
 
         <nav className='flex justify-between items-center-safe gap-3 py-1'>
           <Avatar1
-            images={{image1: 'Logo.svg'}}
+            images={{image1: '/Logo.svg'}}
             styles={{image1: 'w-full !rounded-none'}}
             extra={'min-w-25 w-25 md:mx-5 !rounded-none'}
             onClick={()=> handleFeedRoute(navigate)}

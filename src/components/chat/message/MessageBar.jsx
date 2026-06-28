@@ -1,11 +1,26 @@
 import React from 'react'
 import { SelectMenuItem1 } from '../../../Designs/base/Dropdown'
 import { Avatar1 } from '../../../Designs/base/Avatars'
+import { useNavigate } from 'react-router-dom'
+import { handleProfileRoute } from '../../../pathRoutes/UserRoutes'
 
 export const PeopleMessageBar = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='flex gap-3 justify-start'>
-            <Avatar1 images={{ image1: '../../../src/assets/images/profiles/female1.png' }} extra={'min-w-10 !h-10 md:!h-12'} />
+            <Avatar1
+                images={{
+                    image1: '../../../src/assets/images/profiles/female1.png'
+                }}
+                extra={'min-w-10 !h-10 md:!h-12'}
+                onClick={() => {
+                    handleProfileRoute({
+                        navigate,
+                        username: 'james'
+                    })
+                }}
+            />
             <div className='bg-black/5 w-[clamp(380px,3vw,450px)] p-3 rounded-lg flex flex-col gap-3'>
                 <SelectMenuItem1
                     extra={'bg-transparent !w-full !p-0 !items-center'}
