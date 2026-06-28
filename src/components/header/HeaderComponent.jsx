@@ -4,15 +4,25 @@ import { InputField1 } from '../../Designs/base/Inputs'
 import { Button1 } from '../../Designs/base/Buttons'
 import { IoPersonOutline } from 'react-icons/io5'
 import { SlPaperPlane } from 'react-icons/sl'
+import { Avatar1 } from '../../Designs/base/Avatars'
+import { useNavigate } from 'react-router-dom'
+import { handleLoginRoute } from '../../pathRoutes/AuthRoutes'
+import { handleFeedRoute } from '../../pathRoutes/GlobalRoutes'
+import { handleChatListRoute } from '../../pathRoutes/ChatRoutes'
 
 const HeaderComponent = () => {
+  const navigate = useNavigate()
+
   return (
     <header className='fixed left-0 right-0 top-0 z-10 md:static py-2 px-4 md:px-10 bg-white'>
 
         <nav className='flex justify-between items-center-safe gap-3 py-1'>
-          <div className='min-w-25 w-25 md:mx-5'>
-            <img src='/Logo.svg' className='w-full ' />
-          </div>
+          <Avatar1
+            images={{image1: 'Logo.svg'}}
+            styles={{image1: 'w-full !rounded-none'}}
+            extra={'min-w-25 w-25 md:mx-5 !rounded-none'}
+            onClick={()=> handleFeedRoute(navigate)}
+          />
 
           <div className=' hidden md:block min-w-50 w-70 md:w-full max-w-150 shrink'>
             <InputField1
@@ -40,7 +50,9 @@ const HeaderComponent = () => {
               text1: 'font-normal !text-base'
             }}
             extra={' hidden md:flex bg-transparent !text-black  justify-center-safe mx-5'}
+            onClick={()=> handleLoginRoute(navigate)}
           />
+
           <Button1
             showDefault={false}
             icons={{ icon2: SlPaperPlane }}
@@ -49,6 +61,7 @@ const HeaderComponent = () => {
               text1: 'font-normal !text-base'
             }}
             extra={' block md:hidden  bg-transparent !text-black  justify-center-safe '}
+            onClick={()=> handleChatListRoute(navigate)}
           />
         </nav>
       </header>

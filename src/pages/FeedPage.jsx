@@ -13,6 +13,11 @@ import { LuPlus } from "react-icons/lu";
 import { InputField1, TextareaField1 } from '../Designs/base/Inputs'
 import { CiImageOn } from "react-icons/ci";
 import { SlPaperPlane } from 'react-icons/sl'
+import { NavLink } from 'react-router-dom'
+import AddPostComponent from '../components/feed/AddPostComponent'
+import PostHeader from '../components/feed/post/PostHeader'
+import PostFooter from '../components/feed/post/PostFooter'
+import PostComponent from '../components/feed/post/PostComponent'
 
 
 const FeedPage = () => {
@@ -24,104 +29,11 @@ const FeedPage = () => {
                 <ProfileCardComponent />
 
                 <article className='flex-1 flex flex-col gap-5 md:gap-10'>
-                    <section className='bg-white p-5 border-y-1 md:border-1 border-black/10 md:rounded-lg'>
-                        <div className='flex gap-3 items-start'>
-                            <Avatar1
-                                showDefault={false}
-                                images={{ image1: "/src/assets/images/profiles/male1.png" }}
-                                extra={'!w-12 !h-auto'}
-                            />
-                            <div className='w-full'>
-                                <TextareaField1
-                                    showDefault={false}
-                                    texts={{ placeholder1: "What's on your mind?" }}
-                                    styles={{ textarea1: '!border-0 !border-b-1 !p-1 !h-auto max-h-70 resize-none outline-0 rounded-none !w-full' }}
-                                    extra={'flex-1 min-w-50 h-auto mb-2'}
-
-                                />
-
-                                <div className='flex justify-between items-center-safe'>
-                                    <Button4
-                                        texts={{ text1: 'Add Media' }}
-                                        icons={{ icon1: CiImageOn }}
-                                        styles={{ text1: 'text-black font-normal !text-base', icon1: '!fill-black' }}
-                                        extra={'bg-white'}
-                                    />
-                                    <Button1
-                                        showDefault={false}
-                                        texts={{ text1: 'Post' }}
-                                        styles={{ text1: 'text-white font-normal !text-base', icon1: '!fill-black' }}
-                                        extra={'bg-indigo-400 !px-6 !rounded-full'}
-                                    />
-                                </div>
-                            </div>
-
-                        </div>
-                    </section>
+                    <AddPostComponent/>
 
                     <section className='flex gap-12'>
                         <article className='flex flex-col gap-7'>
-                            <section className='bg-white md:border-1 border-black/10'>
-                                <div className='flex justify-between items-center-safe p-5'>
-                                    <div className='flex gap-5'>
-                                        <Avatar1
-                                            showDefault={false}
-                                            images={{ image1: "/src/assets/images/profiles/male1.png" }}
-                                            extra={'w-13 h-13'}
-                                        />
-                                        <div className='font-semibold'>
-                                            <p className=' text-lg'>Robert Fox </p>
-                                            <p className='text-black/40'>Software Engineer</p>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col  items-end-safe'>
-                                        <Button5
-                                            showDefault={false}
-                                            icons={{ icon1: HiOutlineDotsHorizontal }}
-                                            styles={{ icon1: '!fill-black' }}
-                                            extra={'bg-transparent !p-2'}
-                                        />
-                                        <p className='text-black/40'>3 days ago</p>
-                                    </div>
-                                </div>
-                                <DropdownLine1 extra={'bg-black/10 w-full'} />
-                                <div className='p-7'>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sint voluptatibus id assumenda. Corporis dolores necessitatibus, consequatur ratione aspernatur doloremque minus ipsa voluptates commodi, distinctio error sint voluptas culpa. Vero veritatis similique ipsum, at quaerat eaque magnam repellendus voluptatum minima consectetur aspernatur impedit velit quo distinctio nulla ducimus nihil mollitia?</p>
-                                </div>
-
-                                <div className='flex justify-between items-center-safe p-8 '>
-                                    <Button4
-                                        texts={{ text1: 'Comment' }}
-                                        icons={{ icon1: BsChat }}
-                                        styles={{
-                                            text1: 'text-black !text-base',
-                                            icon1: '!fill-black'
-                                        }}
-                                        extra={'bg-transparent !p-0'}
-                                    />
-
-                                    <Button5
-                                        showDefault={false}
-                                        icons={{ icon1: AiFillLike }}
-                                        styles={{ icon1: '!fill-white drop-shadow-[0_0_1px_black] size-6 hover:!fill-red-600' }}
-                                        extra={'bg-transparent !p-1'}
-                                    />
-                                </div>
-
-                                <div className='flex justify-center-safe items-center-safe p-8  gap-3'>
-                                    <Avatar1 images={{ image1: '/src/assets/images/profiles/male1.png' }} />
-                                    <div className='flex-1'>
-                                        <InputField1
-                                            showDefault={false}
-                                            texts={{ placeholder1: 'Share your thoughts here...' }}
-                                            styles={{ input1: '!text-base text-[#707988] flex-1 px-3' }}
-                                            extra={'!ring-[#E2E8F0] w-full py-3'}
-                                        />
-                                    </div>
-                                </div>
-
-
-                            </section>
+                            <PostComponent/>
 
                             <section className='bg-white md:border-1 border-black/10'>
                                 <div className='flex justify-between items-center-safe p-5'>
@@ -227,7 +139,7 @@ const FeedPage = () => {
 
                 </article>
 
-                <aside className='hidden md:block'>
+                <aside className='hidden lg:block'>
                     <section>
 
                         <div className='bg-white  rounded-xl min-w-90 border-1 border-black/10 rounded-md'>

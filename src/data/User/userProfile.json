@@ -1,0 +1,10 @@
+ // dont worry im just testing only. just a test data
+ {
+    "id": 1,
+    "name": "John testings",
+    "email": "John@gmail.com",
+    "username": "JT_here",
+    "password": "jthere",
+    "is_verified": true,
+    "is_active": true
+}

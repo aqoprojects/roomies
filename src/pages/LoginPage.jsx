@@ -3,16 +3,17 @@ import { Button1, Button4, GmailButton1 } from '../Designs/base/Buttons'
 import { DropdownLine1 } from '../Designs/base/Dropdown'
 import { FaUserSecret } from "react-icons/fa";
 import { InputField1 } from '../Designs/base/Inputs';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { handleFeedRoute } from '../pathRoutes/GlobalRoutes';
+import HeaderComponent from '../components/header/HeaderComponent';
 
 
 const LoginPage = () => {
+    const navigate = useNavigate()
+
   return (
     <div className='flex flex-col h-screen bg-white md:bg-[#FAFBFF]'>
-        <header className='flex justify-center-safe items-center-safe py-3'>
-            <div className='w-25'>
-                <img src='/Logo.svg' className='w-full '/>
-            </div>
-        </header>
+        <HeaderComponent/>
 
         <main className='flex-1 flex justify-center-safe items-center-safe'>
             <section className='w-100 md:shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
@@ -63,9 +64,10 @@ const LoginPage = () => {
                         showDefault={false}
                         texts={{text1: 'Login'}}
                         extra={'w-full bg-black !font-normal text-sm justify-center-safe py-3 my-9'}
+                        onClick={()=> handleFeedRoute(navigate)}
                     />
 
-                    <p className='text-center text-[#5D6778]'>Don't have an account? <span className='text-black/50 font-semibold'>Sign up</span></p>
+                    <p className='text-center text-[#5D6778]'>Don't have an account? <NavLink to={'/signup'} className='text-black/50 font-semibold'>Sign up</NavLink></p>
 
             </section>
         </main>

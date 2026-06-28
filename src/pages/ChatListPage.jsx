@@ -14,6 +14,8 @@ import { Avatar3 } from '../Designs/base/Avatars';
 import NewMessage from '../components/NewMessage';
 import ProfileCardComponent from '../components/userRelated/ProfileCardComponent';
 import HeaderComponent from '../components/header/HeaderComponent';
+import { NavLink } from 'react-router-dom';
+import ChatComponent from '../components/chat/ChatComponent';
 
 
 const ChatListPage = () => {
@@ -41,21 +43,9 @@ const ChatListPage = () => {
 
 
           <section className='flex flex-1 overflow-hidden'>
-            <div className='flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-full md:w-auto'>
+            <div className='flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-full'>
               <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
-                <DropdownListHeader1
-                  showDefault={false}
-                  texts={{
-                    text1: 'Bessie Cooper',
-                    text2: "Hi, Robert. I'm facing some challenges"
-                  }}
-                  images={{ image1: '/src/assets/images/profiles/female1.png' }}
-                  styles={{
-                    text1: '!font-medium',
-                    text2: '!text-lg'
-                  }}
-                  extra={'!gap-6 !shadow-none bg-black/5 w-full'}
-                />
+                <ChatComponent/>
 
                 <DropdownListHeader1
                   showDefault={false}
@@ -116,7 +106,7 @@ const ChatListPage = () => {
               </div>
             </div>
 
-            <div className='hidden flex-1 p-5 md:flex flex-col justify-center-safe items-center-safe'>
+            <div className='hidden flex-1 p-5 lg:flex flex-col justify-center-safe items-center-safe'>
               <Avatar3
                 icons={{ icon1: HiOutlineInbox }}
                 extra={'bg-transparent w-20 h-20'}

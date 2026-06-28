@@ -5,9 +5,14 @@ import { FaUserSecret } from "react-icons/fa";
 import { InputField1 } from '../Designs/base/Inputs';
 import { userRegisterApi } from '../api/Auth';
 import Validator from '../Validators/FormValidator'
+import { NavLink, useNavigate } from 'react-router-dom';
+import { handleVerificationRoute } from '../pathRoutes/AuthRoutes';
+import HeaderComponent from '../components/header/HeaderComponent';
 
 
 const SignupPage = () => {
+    const navigate = useNavigate()
+
 
     async function registerUser(prevState, formData) {
         const fullname = formData.get('fullname');
@@ -38,11 +43,7 @@ const SignupPage = () => {
     )
     return (
         <div className='flex flex-col gap-10 h-screen bg-white md:bg-[#FAFBFF]'>
-            <header className='flex justify-center-safe items-center-safe py-3'>
-                <div className='w-25'>
-                    <img src='/Logo.svg' className='w-full ' />
-                </div>
-            </header>
+            <HeaderComponent/>
 
             <main className='flex-1 flex justify-center-safe items-center-safe'>
                 <section className='w-105 md:shadow-[0_0_0_1px_rgba(0,0,0,0.1)] shadow-black/10 rounded-md bg-white py-15 px-10'>
@@ -162,12 +163,12 @@ const SignupPage = () => {
                             FieldType='submit'
                             disabled={isPending}
                             extra={` w-full bg-black !font-normal text-base justify-center-safe py-2.5 my-9 ${isPending ? 'opacity-50 cursor-not-allowed': 'opacity-100'} `}
-                            
+                            onClick={()=> handleVerificationRoute(navigate)}
                         />
                     </form>
 
 
-                    <p className='text-center text-[#5D6778] '>Have an account? <span className='text-black font-semibold'>Log in</span></p>
+                    <p className='text-center text-[#5D6778] '>Have an account? <NavLink to={'/login'} className='text-black font-semibold'>Log in</NavLink></p>
 
                 </section>
             </main>
