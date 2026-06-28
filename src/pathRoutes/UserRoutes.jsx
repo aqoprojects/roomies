@@ -15,3 +15,13 @@ export const handleUserSavedPostRoute = ({navigate, username}) => {
 export const handleUserSettingsRoute = ({navigate, username}) => {
   navigate(`/${username}/settings`)
 }
+
+
+export const handleUserAccountSettingRoute = ({navigate, username}) => {
+  navigate(`/${username}/settings/account`)
+}
+
+
+export const handleUserNotificationgRoute = (navigate) => {
+  navigate(`/notification`)
+}

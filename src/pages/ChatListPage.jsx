@@ -31,8 +31,8 @@ const ChatListPage = () => {
 
         <ProfileCardComponent/>
 
-        <article className='flex-1 flex flex-col  md:border-1 border-black/10 md:rounded-lg overflow-hidden'>
-          <section className='hidden md:flex justify-between border-b-1 border-black/10 p-6'>
+        <article className='flex-1 flex flex-col  lg:border-1 border-black/10 md:rounded-lg overflow-hidden'>
+          <section className='hidden lg:flex justify-between border-b-1 border-black/10 p-6'>
             <div>
               <p className='font-semibold text-xl'>Messages</p>
             </div>
@@ -43,7 +43,7 @@ const ChatListPage = () => {
 
 
           <section className='flex flex-1 overflow-hidden'>
-            <div className='flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-full'>
+            <div className='flex flex-col-reverse md:flex-col h-full md:border-r-1 border-black/10 h-120 w-full lg:w-auto '>
               <div className='flex-1 md:mt-10 md:border-b-1 border-black/10 overflow-auto md:my-2'>
                 <ChatComponent/>
 

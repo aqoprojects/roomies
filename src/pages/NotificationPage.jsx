@@ -18,31 +18,18 @@ const NotificationPage = () => {
         <div className="flex flex-col h-screen">
             <HeaderComponent />
 
-            <main className='flex gap-10 py-8 px-20 flex-1'>
+            <main className='flex gap-10 py-8 px-3 md:px-20 flex-1 mt-13 md:mt-0'>
                 <ProfileCardComponent />
 
                 <article className='flex-1 flex flex-col gap-10'>
 
                     <section className='bg-white border-1 border-black/10 rounded-md'>
                         <div className='py-4 px-6 border-b-1  border-black/10'>
-                            <p className='text-lg font-bold'>Settings</p>
+                            <p className='text-lg font-bold'>Notification</p>
                         </div>
 
                         <section className='mb-4'>
-                            <div className='flex gap-3 justify-between items-center-safe px-4 py-6 border-b-1 border-black/10'>
-                                <div className='flex gap-5 items-center-safe'>
-                                    <Avatar1
-                                        showDefault={false}
-                                        images={{ image1: "/src/assets/images/profiles/male1.png" }}
-                                        extra={'w-13 h-13'}
-                                    />
-                                    <div className='font-semibold'>
-                                        <p className=' text-lg'>Robert Fox <span className='text-base text-black/40'>start following you.</span></p>
 
-                                    </div>
-                                </div>
-                                <p>10 minutes ago</p>
-                            </div>
                             
                             <div className='flex gap-3 justify-between items-center-safe px-4 py-6 border-b-1 border-black/10'>
                                 <div className='flex gap-5 items-center-safe'>
@@ -51,8 +38,9 @@ const NotificationPage = () => {
                                         images={{ image1: "/src/assets/images/profiles/male1.png" }}
                                         extra={'w-13 h-13'}
                                     />
-                                    <div className='font-semibold'>
-                                        <p className=' text-lg'>Robert Fox <span className='text-base text-black/40'>start following you.</span></p>
+                                    <div className='font-semibold flex gap-2 md:flex-row flex-col'>
+                                        <p className=' text-lg'>Robert Fox </p>
+                                        <p className='text-base text-black/40'>start following you.</p>
 
                                     </div>
                                 </div>
@@ -76,7 +64,7 @@ const NotificationPage = () => {
                     </section>
 
                 </article>
-                <aside>
+                <aside className='hidden lg:block'>
                     <section>
 
                         <div className='bg-white  rounded-xl min-w-90 border-1 border-black/10 rounded-md'>

@@ -4,8 +4,13 @@ import { IoPersonOutline } from "react-icons/io5";
 import { FiHome } from "react-icons/fi";
 import { SlPaperPlane } from "react-icons/sl";
 import { LuBell } from "react-icons/lu";
+import { handleFeedRoute } from '../../pathRoutes/GlobalRoutes';
+import { useNavigate } from 'react-router-dom';
+import { handleProfileRoute, handleUserNotificationgRoute } from '../../pathRoutes/UserRoutes';
+import { handleChatListRoute } from '../../pathRoutes/ChatRoutes';
 
 const ProfileCardComponent = () => {
+    const navigate = useNavigate()
     return (
         <aside className='hidden xl:block rounded-t-sm'>
             <Dropdown1 extra={'!w-80  px-0 py-0 pb-5 bg-white !shadow-none border-1 border-black/10'}>
@@ -29,6 +34,7 @@ const ProfileCardComponent = () => {
                         texts={{ text1: 'Home' }}
                         icons={{ icon1: FiHome }}
                         styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
+                        onClick={() => handleFeedRoute(navigate)}
                     />
                     <DropdownLine1 extra={'bg-black/10 w-full'} />
                     <SelectMenuItem3
@@ -37,6 +43,10 @@ const ProfileCardComponent = () => {
                         icons={{ icon1: IoPersonOutline }}
                         texts={{ text1: 'Profile' }}
                         styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
+                        onClick={() => handleProfileRoute({
+                            navigate,
+                            username: 'james'
+                        })}
                     />
                     <DropdownLine1 extra={'bg-black/10 w-full'} />
                     <SelectMenuItem3
@@ -45,6 +55,7 @@ const ProfileCardComponent = () => {
                         icons={{ icon1: SlPaperPlane }}
                         texts={{ text1: 'Messages' }}
                         styles={{ text1: '!text-base text-black', icon1: '!w-5 !h-5 ' }}
+                        onClick={() => handleChatListRoute(navigate)}
                     />
                     <DropdownLine1 extra={'bg-black/10 w-full'} />
                     <SelectMenuItem3
@@ -53,6 +64,7 @@ const ProfileCardComponent = () => {
                         icons={{ icon1: LuBell }}
                         texts={{ text1: 'notifications' }}
                         styles={{ text1: '!text-base text-black/50', icon1: '!w-5 !h-5 text-black/50' }}
+                        onClick={() => handleUserNotificationgRoute(navigate)}
                     />
                 </div>
             </Dropdown1>

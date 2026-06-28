@@ -43,7 +43,7 @@ const UserProfilePage = () => {
                         <Routes>
                             <Route index element={<UserPosts/>} />
                             <Route path="saved" element={<UserSavePost/>} />
-                            <Route path="settings" element={<UserSettings/>} />
+                            <Route path="/settings/*" element={<UserSettings/>} />
                         </Routes>
 
 
